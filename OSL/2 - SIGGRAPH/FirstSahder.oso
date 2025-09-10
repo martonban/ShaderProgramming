@@ -1,0 +1,23 @@
+OpenShadingLanguage 1.00
+# Compiled by oslc 1.14.4.0dev
+# options: -o C:\Users\Marci\AppData\Local\Temp\tmpmmx_x1cy.oso -IC:\Program Files\Blender Foundation\Blender 4.5\4.5\scripts\addons_core\cycles\shader
+shader simple_material
+oparam	color	P_color	0 0 0		%read{2147483647,-1} %write{3,3}
+global	point	P	%read{0,0} %write{2147483647,-1}
+local	point	P_object	%read{1,2} %write{0,0}
+local	color	material_color	%read{3,3} %write{2,2}
+const	string	$const1	"common"		%read{0,0} %write{2147483647,-1}
+const	string	$const2	"object"		%read{0,0} %write{2147483647,-1}
+temp	point	$tmp1	%read{2,2} %write{1,1}
+code ___main___
+# C:\\Learn\\project\\OSL_Programming\\1 - SIGGRAPH\\FirstSahder.osl:7
+#     
+	transform	P_object $const1 $const2 P 	%filename{"C:\\Learn\\project\\OSL_Programming\\1 - SIGGRAPH\\FirstSahder.osl"} %line{7} %argrw{"wrrr"}
+# C:\\Learn\\project\\OSL_Programming\\1 - SIGGRAPH\\FirstSahder.osl:9
+#     P_color = material_color;
+	floor		$tmp1 P_object 	%line{9} %argrw{"wr"}
+	sub		material_color P_object $tmp1 	%argrw{"wrr"}
+# C:\\Learn\\project\\OSL_Programming\\1 - SIGGRAPH\\FirstSahder.osl:10
+# }
+	assign		P_color material_color 	%line{10} %argrw{"wr"}
+	end

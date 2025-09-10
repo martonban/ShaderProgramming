@@ -1,0 +1,11 @@
+OpenShadingLanguage 1.00
+# Compiled by oslc 1.14.4.0dev
+# options: -o C:\Users\Marci\AppData\Local\Temp\tmpqmrs71k6.oso -IC:\Program Files\Blender Foundation\Blender 4.5\4.5\scripts\addons_core\cycles\shader
+shader SimpleAlbedo
+param	color	albedo	1 1 0		%read{0,0} %write{2147483647,-1}
+oparam	color	result	0 0 0		%read{2147483647,-1} %write{0,0}
+code ___main___
+# C:\\Learn\\project\\OSL_Programming\\2 - Random Small Shaders\\1_SimpleColorShader.osl:7
+# }
+	assign		result albedo 	%filename{"C:\\Learn\\project\\OSL_Programming\\2 - Random Small Shaders\\1_SimpleColorShader.osl"} %line{7} %argrw{"wr"}
+	end
