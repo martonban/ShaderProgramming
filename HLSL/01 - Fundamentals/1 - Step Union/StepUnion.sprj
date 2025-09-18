@@ -34,8 +34,8 @@
 		<entry type="file" name="Simple" shader="ps" />
 		<entry type="camera" fp="false">
 			<distance>8</distance>
-			<pitch>-83</pitch>
-			<yaw>295</yaw>
+			<pitch>-86</pitch>
+			<yaw>294</yaw>
 			<roll>360</roll>
 		</entry>
 		<entry type="clearcolor" r="0" g="0" b="0" a="1" />
