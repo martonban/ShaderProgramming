@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3g8ve0nd2u0n"]
+
+[ext_resource type="Shader" uid="uid://ctidde71os5g" path="res://shader/edge_detection_pass.gdshader" id="1_cyp6q"]
+[ext_resource type="Texture2D" uid="uid://c5fimtsxnax1h" path="res://assets/mario.png" id="2_cyp6q"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cyp6q"]
+
+[sub_resource type="Sky" id="Sky_32jcc"]
+sky_material = SubResource("ProceduralSkyMaterial_cyp6q")
+
+[sub_resource type="Environment" id="Environment_00cdq"]
+background_mode = 2
+sky = SubResource("Sky_32jcc")
+tonemap_mode = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_00cdq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sxmuh"]
+render_priority = 0
+shader = ExtResource("1_cyp6q")
+shader_parameter/input_albedo = ExtResource("2_cyp6q")
+shader_parameter/input_resolution = Vector2(4096, 4096)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_00cdq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.948224, 0.317603, 0, -0.317603, 0.948224, 0.656073, 0.627181, -0.0121745)
+mesh = SubResource("QuadMesh_00cdq")
+surface_material_override/0 = SubResource("ShaderMaterial_sxmuh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.750573, 0.660788, 0, -0.660788, 0.750573, 0, 1.65208, 1.42726)

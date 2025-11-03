@@ -1,0 +1,11 @@
+shader global_P(
+    output color P_color = color(0.0, 0.0, 0.0)
+)
+{
+    point P_object;
+    // 
+    P_object = transform("common", "object", P);
+    
+    color material_color = P_object - floor( P_object );
+    P_color = material_color;
+}
