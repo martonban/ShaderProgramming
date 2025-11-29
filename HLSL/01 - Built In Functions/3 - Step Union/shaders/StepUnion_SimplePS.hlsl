@@ -7,7 +7,7 @@ float4 main(float4 fragCoord : SV_POSITION) : SV_TARGET
 {
 	float2 uv = fragCoord / uResolution;
 	float3 uvColor = float3(uv.x, uv.y, 0.0);
-	float2 borderPixel = 50 / uResolution;
+	float2 borderPixel = 100 / uResolution;
 	
 	float r0 = step(borderPixel.x, uv.x);
 	float r1 = step(uv.x, 1 - borderPixel.x);
