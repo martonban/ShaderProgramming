@@ -6,7 +6,7 @@ This repository primarily contains my smaller shader programming projects. The m
 |---|---|---|---|
 | Edge Detection | [link](https://github.com/martonban/ShaderProgramming/tree/master/GLSL/01%20-%20Edge%20Detection) | Gaussian Edge Detection Shader in Godot | <img width="300px"  alt="videoframe_79099" src="https://github.com/user-attachments/assets/027f6884-04ed-4616-9eb0-b2d9da282df8" /> |
 
-# Node Base Project
+# Node Base Projects
 | Title | Link | Description | Image |
 |---|---|---|---|
 | Galaxy Shader | [link](https://github.com/martonban/ShaderProgramming/tree/master/Node%20Based/1%20-%20Galaxy) | A ray march based shader in belnder. |  <img width="300px" alt="Galaxy Preview" src="https://github.com/user-attachments/assets/752b2620-d81f-4f6d-a852-2aa0fa71f0fa" /> |
