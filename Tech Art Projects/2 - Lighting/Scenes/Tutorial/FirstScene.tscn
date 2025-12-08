@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://g60ub6p5f8pm"]
+
+[ext_resource type="PackedScene" uid="uid://captqyud0mei2" path="res://Prefabs/ReferenceSpeheres.tscn" id="1_pkacy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pkacy"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_oige5"]
+sky_material = SubResource("ProceduralSkyMaterial_pkacy")
+
+[sub_resource type="Environment" id="Environment_ex0bv"]
+background_mode = 1
+sky = SubResource("Sky_oige5")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g5cgj"]
+size = Vector2(40, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkacy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pkacy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oige5"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ex0bv")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_g5cgj")
+surface_material_override/0 = SubResource("StandardMaterial3D_pkacy")
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9784366, 0.50158036, 0.5513532)
+mesh = SubResource("BoxMesh_pkacy")
+surface_material_override/0 = SubResource("StandardMaterial3D_oige5")
+
+[node name="ReferenceSpeheres" parent="." instance=ExtResource("1_pkacy")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.26268935, 0.63453436, -0.17904139)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9517447, 1.6686041, -0.2932583)
+light_size = 0.446
+shadow_enabled = true
+omni_attenuation = 2.0

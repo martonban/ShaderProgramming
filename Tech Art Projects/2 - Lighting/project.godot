@@ -11,5 +11,12 @@ config_version=5
 [application]
 
 config/name="2 - Lighting"
+run/main_scene="uid://cbrxhs6dvk4h6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=4
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=4
