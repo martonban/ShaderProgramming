@@ -1,7 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbrxhs6dvk4h6"]
+[gd_scene load_steps=10 format=3 uid="uid://cbrxhs6dvk4h6"]
 
 [ext_resource type="PackedScene" uid="uid://captqyud0mei2" path="res://Prefabs/ReferenceSpeheres.tscn" id="2_4c5yt"]
 [ext_resource type="PackedScene" uid="uid://cm7gtif8htnw8" path="res://Prefabs/IndoorPrefab.tscn" id="2_sr5sn"]
+[ext_resource type="LightmapGIData" uid="uid://74v6pte5cb2m" path="res://Scenes/Tutorial/Indoor.lmbake" id="3_sr5sn"]
+[ext_resource type="Script" uid="uid://intmmh7d381u" path="res://Scenes/Tutorial/camera_3d.gd" id="4_ceeux"]
+
+[sub_resource type="Gradient" id="Gradient_4c5yt"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sr5sn"]
+gradient = SubResource("Gradient_4c5yt")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4c5yt"]
 sky_horizon_color = Color(0.47794515, 0.7045227, 0.83030003, 1)
@@ -13,14 +20,21 @@ sky_material = SubResource("ProceduralSkyMaterial_4c5yt")
 
 [sub_resource type="Environment" id="Environment_ceeux"]
 background_mode = 1
+background_energy_multiplier = 1.24
 sky = SubResource("Sky_sr5sn")
 ambient_light_source = 3
-ambient_light_color = Color(0.20716631, 0.22131625, 0.27126443, 1)
-ambient_light_sky_contribution = 0.8
-ambient_light_energy = 2.9
+ambient_light_color = Color(0.17821294, 0.18329647, 0.23179552, 1)
+ambient_light_sky_contribution = 0.2
+ambient_light_energy = 3.53
 tonemap_mode = 3
+tonemap_exposure = 1.37
 glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.06
+volumetric_fog_albedo = Color(0.0737148, 0.4058027, 0.5544442, 1)
+volumetric_fog_sky_affect = 0.0
 adjustment_enabled = true
+adjustment_color_correction = SubResource("GradientTexture2D_sr5sn")
 
 [node name="Indoor" type="Node3D"]
 
@@ -28,14 +42,14 @@ adjustment_enabled = true
 environment = SubResource("Environment_ceeux")
 
 [node name="ReferenceSpeheres" parent="." instance=ExtResource("2_4c5yt")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 6.101427, 1.3701458, -0.11164069)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 8.138163, 1.8301139, -7.062526)
 visible = false
 
 [node name="theInn_FBX" parent="." instance=ExtResource("2_sr5sn")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.02296114, 1.7026213, -0.008466244)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.00908947, 1.7333912, -0.010830641)
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6152225, 2.544787, 8.105734)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6589334, 2.6294541, 8.065671)
 light_color = Color(0.818668, 0.46367967, 0.24511236, 1)
 light_energy = 1.238
 light_size = 0.035
@@ -52,7 +66,7 @@ omni_range = 1.8610877
 omni_attenuation = 2.0
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.504657, 3.3078573, -3.6907036)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.505882, 3.3078573, -3.7115254)
 light_color = Color(0.818668, 0.46367967, 0.24511236, 1)
 light_size = 0.035
 shadow_enabled = true
@@ -60,10 +74,10 @@ omni_range = 1.8610877
 omni_attenuation = 2.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.63192177, 2.5534189, 3.6580524)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5949106, 2.5534189, 3.6302938)
 light_color = Color(0.818668, 0.46367967, 0.24511236, 1)
-light_energy = 2.03
-light_size = 0.035
+light_energy = 0.811
+light_size = 0.064
 shadow_enabled = true
 omni_range = 2.8753529
 omni_attenuation = 2.0
@@ -77,19 +91,42 @@ omni_range = 1.9964932
 omni_attenuation = 2.0
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.370913, 3.6494205, 3.6299515)
-light_color = Color(0.824614, 0.8633246, 0.68087626, 1)
-light_energy = 5.119
-light_size = 0.074
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.442015, 3.6494205, 3.5964093)
+light_color = Color(0.9014974, 0.9099636, 0.6961014, 1)
+light_energy = 4.053
+light_volumetric_fog_energy = 1.566
+light_size = 0.236
 shadow_enabled = true
-omni_range = 29.67
-omni_attenuation = 2.0
+omni_range = 10.594
+omni_attenuation = 1.942
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.205231, 2.5019004, -7.283003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8274984, 2.5019004, -7.7223125)
 light_color = Color(0.72024184, 0.38664347, 0.21925038, 1)
-light_energy = 6.386
-light_size = 0.391
+light_energy = 8.977
+light_volumetric_fog_energy = 3.424
+light_size = 0.686
 shadow_enabled = true
 omni_range = 109.695
-omni_attenuation = 2.0
+omni_attenuation = 1.048
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4774618, 0.8986566, -6.3987913)
+light_color = Color(0.4942839, 0.19565764, 0, 1)
+light_energy = 6.782
+omni_range = 37.272
+omni_attenuation = 1.394
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.67245346, 0.34898522, -0.6526988, 0.20672481, 0.9353227, 0.28711718, 0.7106837, 0.058143873, -0.7011049, -5.015949, 6.833159, -6.265524)
+light_color = Color(0.059431322, 0.18009368, 0.3671275, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 0.795
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+quality = 2
+light_data = ExtResource("3_sr5sn")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4868796, 7.1321993)
+script = ExtResource("4_ceeux")
