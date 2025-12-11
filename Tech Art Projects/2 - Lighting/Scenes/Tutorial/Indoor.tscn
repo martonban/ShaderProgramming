@@ -93,12 +93,12 @@ omni_attenuation = 2.0
 [node name="OmniLight3D6" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.442015, 3.6494205, 3.5964093)
 light_color = Color(0.9014974, 0.9099636, 0.6961014, 1)
-light_energy = 4.053
+light_energy = 6.868
 light_volumetric_fog_energy = 1.566
 light_size = 0.236
 shadow_enabled = true
-omni_range = 10.594
-omni_attenuation = 1.942
+omni_range = 43.334
+omni_attenuation = 1.723
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.8274984, 2.5019004, -7.7223125)
