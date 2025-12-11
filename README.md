@@ -10,6 +10,7 @@ This repository primarily contains my smaller shader programming projects. The m
 | Title | Link | Description | Image |
 |---|---|---|---|
 | Galaxy Shader | [link](https://github.com/martonban/ShaderProgramming/tree/master/Node%20Based/1%20-%20Galaxy) | A ray march based shader in belnder. |  <img width="300px" alt="Galaxy Preview" src="https://github.com/user-attachments/assets/752b2620-d81f-4f6d-a852-2aa0fa71f0fa" /> |
+| Lighting | [link](https://github.com/martonban/ShaderProgramming/tree/master/Tech%20Art%20Projects/2%20-%20Lighting) | Lighting basics for godot. |  <img width="300px" alt="Képernyőkép 2025-12-11 142832" src="https://github.com/user-attachments/assets/9f4a7467-116c-4963-af42-016354c6c7c4" /> |
 
 # HLSL
 | Title | Link | Description | Image |
