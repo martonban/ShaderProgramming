@@ -1,5 +1,5 @@
 # Shader Programming
-This repository primarily contains my smaller shader programming projects. The main concept is that the GLSL shaders in Godot lean more toward implemantations, while the OSL projects are mostly experimental. HLSL is the only one that follows a consistent theme: it contains my solutions from the Shader Learning platform, which can be viewed in the application called ShaderED. The Tech Art folder contains mainly simple Godot/Blender projects.
+This repository primarily contains my smaller shader programming projects. The main concept is that the GLSL shaders in Godot lean more toward implemantations, while the OSL projects are mostly experimental. HLSL is the only one that follows a consistent theme: it contains my solutions from the Shader Learning platform, which can be viewed in the application called ShaderED.
 
 # GLSL
 | Title | Link | Description | Image |
